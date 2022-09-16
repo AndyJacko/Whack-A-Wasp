@@ -7,21 +7,32 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Whack-A-Wasp</title>
   </head>
-  <body>
-    <div id="header"><h1>Whack-A-Wasp</h1></div>
+  <body id="body" class="body-bg">
+    <div id="header">
+      <h1>Whack-A-Wasp</h1>
+      
+      <div id="time-left" class="hide">Time: 120</div>
+      <div id="score" class="hide">0</div>
+      <div id="start-game"><button>START GAME</button></div>
+      <div id="game-over" class="hide"><p>Game Over</p><p id="final-score">Final Score: </p></div>
+    </div>
 
     <div id="wasps">
-      <div class="portal"><img src="images/wasp.png" alt="Wasp 1" class="wasp"></div>
-      <div class="portal"><img src="images/wasp.png" alt="Wasp 2" class="wasp"></div>
-      <div class="portal"><img src="images/wasp.png" alt="Wasp 3" class="wasp"></div>
-      <div class="portal"><img src="images/wasp.png" alt="Wasp 4" class="wasp"></div>
-      <div class="portal"><img src="images/wasp.png" alt="Wasp 5" class="wasp"></div>
-      <div class="portal"><img src="images/wasp.png" alt="Wasp 6" class="wasp"></div>
+      <div id="portal-1" class="portal"><img src="images/wasp.png" alt="Wasp 1" class="wasp hide"></div>
+      <div id="portal-2" class="portal"><img src="images/wasp.png" alt="Wasp 2" class="wasp hide"></div>
+      <div id="portal-3" class="portal"><img src="images/wasp.png" alt="Wasp 3" class="wasp hide"></div>
+      <div id="portal-4" class="portal"><img src="images/wasp.png" alt="Wasp 4" class="wasp hide"></div>
+      <div id="portal-5" class="portal"><img src="images/wasp.png" alt="Wasp 5" class="wasp hide"></div>
+      <div id="portal-6" class="portal"><img src="images/wasp.png" alt="Wasp 6" class="wasp hide"></div>
     </div>
 
     <div id="ground">
       <img id="made-by" src="images/andyjacko.png" alt="Andy Jacko" />
     </div>
+
+    <audio id="splat" src="sounds/splat.mp3"></audio>
+    <audio id="buzz" src="sounds/wasp.mp3"></audio>
+    <audio id="whack" src="sounds/whack.mp3"></audio>
     <script src="app.js"></script>
   </body>
 </html>

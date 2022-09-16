@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Righteous&display=swap");
 
 * {
   margin: 0;
@@ -15,8 +14,11 @@ body {
 body {
   position: relative;
   color: #000000;
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Righteous", cursive;
   text-transform: uppercase;
+}
+
+.body-bg {
   background-image: url("images/blanket.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -24,11 +26,21 @@ body {
   background-size: cover;
 }
 
+.body-game {
+  background-image: url("images/blanket-game.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 h1 {
-  font-family: "Bungee Spice", cursive;
-  font-size: 32px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
   padding-bottom: 10px;
+  color: #bb0000;
   text-shadow: 0 0 5px #000000;
+  pointer-events: none;
 }
 
 p {
@@ -42,58 +54,113 @@ p {
 
 #header {
   width: 100%;
-  height: 20%;
+  height: 35%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#score,
+#game-over,
+#time-left {
+  margin: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+}
+
+#game-over {
+  text-align: center;
+}
+
+#start-game button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: bold;
 }
 
 #wasps {
   width: 100%;
-  height: 60%;
-  display: flex;
+  height: 55%;
+  display: none;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  cursor: url("images/swatter.png") 60 20, move;
 }
 
 .portal {
-  width: 150px;
-  height: 120px;
+  width: 100px;
+  height: 80px;
   margin: 0 25px;
   background-image: url("images/portal.png");
   background-position: center;
-
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.wasp {
+  width: 100px;
+  height: 80px;
+}
+
 #ground {
   width: 100%;
-  height: 20%;
+  height: 10%;
   position: fixed;
   bottom: 0;
   left: 0;
-  /* background: #414141; */
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 #made-by {
-  margin: 20px 0;
   width: 100px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 400px) {
   h1 {
-    font-size: 50px;
+    font-size: 25px;
   }
 
   p {
     font-size: 12px;
+  }
+
+  #score {
+    font-size: 30px;
+  }
+
+  .portal {
+    width: 150px;
+    height: 120px;
+  }
+
+  .wasp {
+    width: 150px;
+    height: 120px;
+  }
+
+  #made-by {
+    width: 150px;
+  }
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #score {
+    font-size: 30px;
   }
 
   #made-by {
@@ -103,14 +170,28 @@ p {
 
 @media (min-width: 1000px) {
   h1 {
-    font-size: 80px;
+    font-size: 60px;
   }
 
   p {
     font-size: 18px;
   }
 
+  #score {
+    font-size: 50px;
+  }
+
+  .portal {
+    margin: 0 150px;
+  }
+
   #made-by {
     width: 200px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .portal {
+    margin: 0 150px;
   }
 }
